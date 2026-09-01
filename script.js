@@ -1,3 +1,6 @@
+// snbr.dev
+// Todos los derechos reservados.
+
 // ===== BOOT SEQUENCE (typewriter) =====
 const bootLines = [
   "> initializing snbr.dev ...",
