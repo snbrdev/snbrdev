@@ -64,9 +64,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const message = document.getElementById("fieldMessage").value.trim();
 
       const text = `Hola SNBR, soy ${name}. ${message}`;
-      const whatsappUrl = `https://wa.link/q2kxcn?text=${encodeURIComponent(text)}`;
+      // wa.link no reenvía ?text= (siempre cae a un mensaje fijo) — se usa el número directo.
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=595972906300&text=${encodeURIComponent(text)}`;
 
-      // wa.link no siempre soporta ?text= directo — fallback a wa.me si tenés el número.
       window.open(whatsappUrl, "_blank");
     });
   }
