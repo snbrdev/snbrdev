@@ -7,181 +7,351 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>snbr.dev // sistemas y sitios web</title>
-<meta name="description" content="snbr.dev — desarrollo de sitios web y software a medida. Código propio, sin plantillas.">
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<title>snbr.dev // desarrollo web y software a medida</title>
+<meta name="description" content="Programamos sitios web y software a medida, desde cero y sin plantillas. Rápidos, seguros y pensados para que tu negocio consiga más clientes. Paraguay.">
+<meta name="theme-color" content="#0a0d12">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://www.snbr.dev/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.snbr.dev/">
-<meta property="og:title" content="snbr.dev — sistemas y sitios web">
-<meta property="og:description" content="Desarrollo de sitios web a medida. Código propio, sin plantillas.">
+<meta property="og:title" content="snbr.dev — desarrollo web y software a medida">
+<meta property="og:description" content="Sitios web programados desde cero, sin plantillas. Rápidos, seguros y hechos para traerte clientes.">
 <meta property="og:image" content="https://www.snbr.dev/og-image.png">
 <meta property="og:locale" content="es_PY">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="snbr.dev — sistemas y sitios web">
-<meta name="twitter:description" content="Desarrollo de sitios web a medida. Código propio, sin plantillas.">
+<meta name="twitter:title" content="snbr.dev — desarrollo web y software a medida">
+<meta name="twitter:description" content="Sitios web programados desde cero, sin plantillas. Rápidos, seguros y hechos para traerte clientes.">
 <meta name="twitter:image" content="https://www.snbr.dev/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "snbr.dev",
+  "url": "https://www.snbr.dev/",
+  "description": "Desarrollo de sitios web y software a medida.",
+  "areaServed": "PY",
+  "availableLanguage": "es",
+  "priceRange": "$150 - $$$"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Montserrat:wght@700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="scanline"></div>
+<div class="scanline" aria-hidden="true"></div>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
 <!-- NAV -->
 <header class="nav" id="nav">
-  <a href="#top" class="nav__logo">snbr<span class="dot">.</span>dev</a>
-  <nav class="nav__links" id="navLinks">
-    <a href="#servicios">SERVICIOS</a>
-    <a href="#store">STORE</a>
-    <a href="#portafolio">PORTAFOLIO</a>
-    <a href="#contacto">CONTACTO</a>
-    <a href="terms-and-conditions.html">Términos y condiciones</a>
+  <a href="#top" class="nav__logo" aria-label="snbr.dev, inicio"><img src="img/icon-white.png" alt="" width="30" height="28"><span class="nav__word">snbr.dev<span class="cursor-blink" aria-hidden="true">_</span></span></a>
+  <nav class="nav__links" id="navLinks" aria-label="Principal">
+    <a href="#servicios"><i>01</i> servicios</a>
+    <a href="#proceso"><i>02</i> proceso</a>
+    <a href="#store"><i>03</i> paquetes</a>
+    <a href="#portafolio"><i>04</i> portafolio</a>
+    <a href="#faq"><i>05</i> faq</a>
+    <a href="#contacto" class="nav__cta-mobile"><i>06</i> contacto</a>
   </nav>
-  <a href="https://wa.link/q2kxcn" target="_blank" rel="noopener" class="btn btn--ghost nav__cta">EXECUTE_CONNECT</a>
-  <button class="nav__toggle" id="navToggle" aria-label="Abrir menú">
+  <a href="#contacto" class="btn btn--ghost nav__cta">./iniciar_proyecto</a>
+  <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </header>
 
+<main>
+
 <!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero__grid"></div>
+  <canvas class="hero__rain" id="rain" aria-hidden="true"></canvas>
+  <div class="hero__grid" aria-hidden="true"></div>
   <div class="hero__content">
+   <div class="hero__text">
     <div class="terminal" id="bootTerminal">
       <div class="terminal__bar">
-        <span class="dot dot--red"></span><span class="dot dot--amber"></span><span class="dot dot--green"></span>
-        <span class="terminal__title">root@snbr:~$</span>
+        <span class="terminal__dot terminal__dot--r"></span>
+        <span class="terminal__dot terminal__dot--y"></span>
+        <span class="terminal__dot terminal__dot--g"></span>
+        <span class="terminal__title">visitante@snbr:~</span>
       </div>
-      <div class="terminal__body" id="bootBody">
-        <span id="bootText"></span><span class="cursor">▌</span>
-      </div>
+      <pre class="terminal__body" id="bootText" aria-label="Inicio del sistema"></pre>
     </div>
 
-    <h1 class="hero__title">Tu idea = nuestro objetivo a materializar</h1>
-    <p class="hero__subtitle">Diseñamos y programamos sitios web desde cero — sin plantillas, sin atajos. El mismo criterio con el que construimos software, aplicado a tu primer sitio web profesional.</p>
+    <h1 class="hero__title">
+      Tu negocio merece<br>
+      un sitio web <span class="hl" id="rotator">hecho a medida</span><span class="cursor-blink">▌</span>
+    </h1>
+
+    <p class="hero__lead">
+      Somos desarrolladores. Programamos tu sitio web <strong>línea por línea</strong>, sin plantillas ni constructores genéricos,
+      para que cargue rápido, se vea impecable en el celular y convierta visitas en clientes.
+    </p>
 
     <div class="hero__actions">
-      <a href="#store" class="btn btn--primary">VER_PAQUETES</a>
-      <a href="https://wa.link/q2kxcn" target="_blank" rel="noopener" class="btn btn--outline">HABLAR_POR_WHATSAPP</a>
+      <a href="#store" class="btn btn--primary">ver_paquetes</a>
+      <a href="https://wa.link/q2kxcn" target="_blank" rel="noopener" class="btn btn--outline">hablar_por_whatsapp</a>
     </div>
+
+    <ul class="hero__stats" aria-label="Datos clave">
+      <li><b data-count="100" data-suffix="%">0</b><span>código propio</span></li>
+      <li><b data-count="0" data-prefix="">0</b><span>plantillas usadas</span></li>
+      <li><b data-count="5" data-prefix="desde ">0</b><span>días de entrega</span></li>
+    </ul>
+   </div>
+   <div class="hero__brand" aria-hidden="true">
+    <span class="brand-mark"><img src="img/logo-white.png" alt="" width="626" height="498"><i class="brand-mark__cursor"></i></span>
+   </div>
   </div>
 </section>
 
 <!-- SERVICIOS -->
 <section class="section" id="servicios">
-  <p class="eyebrow">SYSTEM_DIRECTIVES // PROTOCOLOS</p>
-  <h2 class="section__title">Lógica compilada. Ejecución impenetrable.</h2>
-  <p class="section__lead">Empezamos por lo que necesitás hoy — un sitio web propio — y detrás está todo el resto de nuestra ingeniería.</p>
+  <p class="eyebrow reveal">// 01 · QUÉ_HACEMOS</p>
+  <h2 class="section__title reveal">Todo lo que tu negocio necesita en internet, programado a mano.</h2>
+  <p class="section__lead reveal">Empezamos por un sitio web propio y, detrás, está toda nuestra ingeniería de software lista para crecer con vos.</p>
 
-  <div class="cards cards--1">
-    <article class="card">
-      <span class="card__index">01</span>
-      <h3 class="card__title">WEB_DEVELOPMENT</h3>
-      <p class="card__text">Sitios web construidos con código propio: rápidos, responsivos y pensados para convertir visitantes en clientes. Sin builders genéricos.</p>
+  <div class="grid grid--4">
+    <article class="card reveal">
+      <span class="card__idx">01</span>
+      <h3 class="card__title">Sitios web</h3>
+      <p>Landing pages y sitios corporativos rápidos, responsivos y optimizados para aparecer en Google.</p>
+      <code class="card__tag">$ stack: html · css · js</code>
+    </article>
+    <article class="card reveal">
+      <span class="card__idx">02</span>
+      <h3 class="card__title">Tiendas y catálogos</h3>
+      <p>Mostrá tus productos y recibí pedidos directo en tu WhatsApp, sin comisiones por venta de terceros.</p>
+      <code class="card__tag">$ módulo: catálogo + pedidos</code>
+    </article>
+    <article class="card reveal">
+      <span class="card__idx">03</span>
+      <h3 class="card__title">Paneles y automatización</h3>
+      <p>Sistemas internos que reemplazan planillas y tareas repetitivas: turnos, stock, reportes y más.</p>
+      <code class="card__tag">$ ahorra --horas --errores</code>
+    </article>
+    <article class="card reveal">
+      <span class="card__idx">04</span>
+      <h3 class="card__title">Software a medida</h3>
+      <p>Aplicaciones e integraciones diseñadas alrededor de cómo trabaja tu empresa, no al revés.</p>
+      <code class="card__tag">$ build --custom</code>
     </article>
   </div>
 </section>
 
-<!-- STORE -->
-<section class="section section--alt" id="store">
-  <p class="eyebrow">STORE // PAQUETES DISPONIBLES</p>
-  <h2 class="section__title">Elegí tu punto de entrada.</h2>
-  <p class="section__lead">Precios de referencia — el alcance final se ajusta a tu proyecto en la consulta por WhatsApp.</p>
+<!-- PROCESO -->
+<section class="section section--alt" id="proceso">
+  <p class="eyebrow reveal">// 02 · PROCESO</p>
+  <h2 class="section__title reveal">Del primer mensaje al sitio en línea.</h2>
+  <p class="section__lead reveal">Un flujo simple y transparente. Sabés qué pasa en cada etapa.</p>
 
-  <div class="cards cards--3">
-    <article class="card card--pricing">
-      <h3 class="card__title">STARTER</h3>
-      <p class="card__price">desde <span>$150</span></p>
-      <ul class="card__list">
+  <ol class="pipeline">
+    <li class="pipeline__step reveal">
+      <span class="pipeline__hash">a1</span>
+      <div>
+        <h3>Conversamos</h3>
+        <p>Nos contás qué hacés y qué querés lograr. Definimos alcance, plazo y precio cerrado antes de escribir una línea.</p>
+      </div>
+    </li>
+    <li class="pipeline__step reveal">
+      <span class="pipeline__hash">b2</span>
+      <div>
+        <h3>Diseñamos y programamos</h3>
+        <p>Construimos el sitio a medida de tu marca. Vas viendo el avance y pedís ajustes en el camino.</p>
+      </div>
+    </li>
+    <li class="pipeline__step reveal">
+      <span class="pipeline__hash">c3</span>
+      <div>
+        <h3>Probamos</h3>
+        <p>Revisamos velocidad, celulares, formularios y buscadores para que todo funcione antes de publicar.</p>
+      </div>
+    </li>
+    <li class="pipeline__step reveal">
+      <span class="pipeline__hash">d4</span>
+      <div>
+        <h3>Publicamos</h3>
+        <p>Tu sitio sale al aire. Te explicamos cómo funciona y quedamos disponibles para lo que venga después.</p>
+      </div>
+    </li>
+  </ol>
+</section>
+
+<!-- STORE -->
+<section class="section" id="store">
+  <p class="eyebrow reveal">// 03 · PAQUETES</p>
+  <h2 class="section__title reveal">Elegí tu punto de partida.</h2>
+  <p class="section__lead reveal">Precios de referencia en dólares (USD). El alcance final se ajusta a tu proyecto en una consulta sin compromiso por WhatsApp.</p>
+
+  <div class="grid grid--3 plans">
+    <article class="plan reveal">
+      <h3 class="plan__name">STARTER</h3>
+      <p class="plan__desc">Tu presencia online, lista para vender.</p>
+      <p class="plan__price"><small>desde</small> $150</p>
+      <ul class="plan__list">
         <li>1 página (landing)</li>
         <li>Diseño responsivo</li>
         <li>Formulario de contacto</li>
         <li>Entrega en 5-7 días</li>
       </ul>
-      <a href="https://wa.link/q2kxcn" target="_blank" rel="noopener" class="btn btn--outline btn--block">SOLICITAR</a>
+      <a href="#contacto" class="btn btn--outline btn--block" data-plan="Starter">solicitar</a>
     </article>
 
-    <article class="card card--pricing card--featured">
-      <span class="card__badge">MÁS ELEGIDO</span>
-      <h3 class="card__title">BUSINESS</h3>
-      <p class="card__price">desde <span>$300</span></p>
-      <ul class="card__list">
+    <article class="plan plan--featured reveal">
+      <span class="plan__badge">★ MÁS ELEGIDO</span>
+      <h3 class="plan__name">BUSINESS</h3>
+      <p class="plan__desc">El sitio completo para tu empresa.</p>
+      <p class="plan__price"><small>desde</small> $300</p>
+      <ul class="plan__list">
         <li>Hasta 5 páginas</li>
         <li>Diseño a medida de tu marca</li>
-        <li>Integración WhatsApp / redes</li>
+        <li>Integración con WhatsApp y redes</li>
         <li>Optimización SEO básica</li>
         <li>Entrega en 10-14 días</li>
       </ul>
-      <a href="https://wa.link/q2kxcn" target="_blank" rel="noopener" class="btn btn--primary btn--block">SOLICITAR</a>
+      <a href="#contacto" class="btn btn--primary btn--block" data-plan="Business">solicitar</a>
     </article>
 
-    <article class="card card--pricing">
-      <h3 class="card__title">CUSTOM</h3>
-      <p class="card__price">A Cotizar</p>
-      <ul class="card__list">
+    <article class="plan reveal">
+      <h3 class="plan__name">CUSTOM</h3>
+      <p class="plan__desc">Cuando necesitás algo más grande.</p>
+      <p class="plan__price plan__price--text">A cotizar</p>
+      <ul class="plan__list">
         <li>Funcionalidades a medida</li>
-        <li>Paneles / Automatizaciones</li>
-        <li>Integraciones Específicas</li>
-        <li>Alcance Definido en Conjunto</li>
+        <li>Paneles y automatizaciones</li>
+        <li>Integraciones específicas</li>
+        <li>Alcance definido en conjunto</li>
       </ul>
-      <a href="https://wa.link/q2kxcn" target="_blank" rel="noopener" class="btn btn--outline btn--block">CONSULTAR</a>
+      <a href="#contacto" class="btn btn--outline btn--block" data-plan="Custom">consultar</a>
     </article>
   </div>
 </section>
 
-<!-- PORTFOLIO -->
-<section class="section" id="portafolio">
-  <p class="eyebrow">CASE_STUDIES // EN CONSTRUCCIÓN</p>
-  <h2 class="section__title">Portafolio</h2>
-  <p class="section__lead">Los primeros proyectos van a aparecer acá. Este bloque está listo para recibirlos.</p>
+<!-- PORTAFOLIO -->
+<section class="section section--alt" id="portafolio">
+  <p class="eyebrow reveal">// 04 · PORTAFOLIO</p>
+  <h2 class="section__title reveal">Proyectos que ya están corriendo.</h2>
+  <p class="section__lead reveal">Esto es lo que sale de nuestra terminal. Y hay un espacio libre esperando el tuyo.</p>
 
-  <div class="cards cards--3">
-    <article class="card card--placeholder">
-      <span class="card__index">PROYECTO_01</span>
-      <p class="card__text">Espacio reservado — próximo caso de estudio.</p>
+  <div class="grid grid--3 work">
+
+    <article class="work__card reveal">
+      <div class="work__thumb work__thumb--daytona" aria-hidden="true">
+        <div class="cube"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      </div>
+      <div class="work__body">
+        <span class="work__status"><span class="dot dot--green"></span>EN_PRODUCCIÓN</span>
+        <h3>Daytona 3D</h3>
+        <p>Experiencia web en 3D interactivo. Un proyecto propio donde llevamos el navegador al límite.</p>
+        <code class="card__tag">$ tipo: 3D · interactivo</code>
+      </div>
     </article>
-    <article class="card card--placeholder">
-      <span class="card__index">PROYECTO_02</span>
-      <p class="card__text">Espacio reservado — próximo caso de estudio.</p>
+
+    <article class="work__card reveal">
+      <div class="work__thumb work__thumb--queen" aria-hidden="true">
+        <span class="crown">♛</span>
+      </div>
+      <div class="work__body">
+        <span class="work__status"><span class="dot dot--green"></span>EN_PRODUCCIÓN</span>
+        <h3>Queen Beauty</h3>
+        <p>Presencia digital para una marca de belleza: imagen cuidada, catálogo claro y contacto directo.</p>
+        <code class="card__tag">$ tipo: sitio de marca</code>
+      </div>
     </article>
-    <article class="card card--placeholder">
-      <span class="card__index">PROYECTO_03</span>
-      <p class="card__text">Espacio reservado — próximo caso de estudio.</p>
-    </article>
+
+    <a href="#contacto" class="work__card work__card--slot reveal" data-plan="Mi proyecto (slot 03)" aria-label="Reservar este espacio para tu proyecto">
+      <div class="work__thumb work__thumb--slot" aria-hidden="true">
+        <span class="plus">+</span>
+      </div>
+      <div class="work__body">
+        <span class="work__status work__status--free"><span class="dot dot--amber"></span>SLOT_03 · DISPONIBLE</span>
+        <h3>Acá puede ir tu sitio web</h3>
+        <p>Este espacio está reservado para el próximo proyecto. Podría ser el tuyo.</p>
+        <code class="card__tag card__tag--cta">$ ./reservar_espacio →</code>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+  <p class="eyebrow reveal">// 05 · FAQ</p>
+  <h2 class="section__title reveal">Preguntas frecuentes.</h2>
+
+  <div class="faq">
+    <details class="faq__item reveal">
+      <summary><span class="faq__q">$ man ¿por qué no usar una plantilla?</span></summary>
+      <p>Las plantillas cargan código que no necesitás: son más lentas, se parecen a miles de sitios y limitan lo que podés hacer. Un sitio programado a medida es más liviano, más seguro y se ve único.</p>
+    </details>
+    <details class="faq__item reveal">
+      <summary><span class="faq__q">$ man ¿qué necesito para empezar?</span></summary>
+      <p>Solo contarnos sobre tu negocio. Si ya tenés logo, textos o fotos, mejor; si no, te orientamos sobre qué conviene preparar.</p>
+    </details>
+    <details class="faq__item reveal">
+      <summary><span class="faq__q">$ man ¿el dominio y el hosting están incluidos?</span></summary>
+      <p>Lo definimos juntos en la consulta, según tu proyecto. Te lo dejamos claro y por escrito antes de empezar, sin costos sorpresa.</p>
+    </details>
+    <details class="faq__item reveal">
+      <summary><span class="faq__q">$ man ¿puedo pedir cambios después?</span></summary>
+      <p>Sí. Durante el desarrollo hacés los ajustes que necesites, y una vez publicado podemos seguir acompañándote con mejoras y mantenimiento.</p>
+    </details>
+    <details class="faq__item reveal">
+      <summary><span class="faq__q">$ man ¿cómo se paga?</span></summary>
+      <p>Acordamos las condiciones de pago antes de empezar, de manera clara. Podés ver más detalles en nuestros <a href="terms-and-conditions.html">términos y condiciones</a>.</p>
+    </details>
   </div>
 </section>
 
 <!-- CONTACTO -->
 <section class="section section--alt" id="contacto">
-  <p class="eyebrow">SECURE_HANDSHAKE // AUTHENTICATION</p>
-  <h2 class="section__title">Solicitud de conexión.</h2>
-  <p class="section__lead">Completá tus datos — el mensaje se arma solo y se envía directo a nuestro WhatsApp.</p>
+  <p class="eyebrow reveal">// 06 · CONTACTO</p>
+  <h2 class="section__title reveal">Iniciemos tu proyecto.</h2>
+  <p class="section__lead reveal">Completá estos datos y el mensaje se arma solo y llega directo a nuestro WhatsApp. Respondemos personalmente.</p>
 
-  <form class="terminal-form" id="contactForm">
+  <form class="terminal-form reveal" id="contactForm" novalidate>
+    <div class="terminal-form__bar">
+      <span class="terminal__dot terminal__dot--r"></span>
+      <span class="terminal__dot terminal__dot--y"></span>
+      <span class="terminal__dot terminal__dot--g"></span>
+      <span class="terminal__title">nuevo_proyecto.sh</span>
+    </div>
     <label class="field">
-      <span>ID_CLIENT*</span>
-      <input type="text" id="fieldName" placeholder="Tu nombre" required>
+      <span>$ nombre*</span>
+      <input type="text" id="fieldName" placeholder="¿Cómo te llamás?" autocomplete="name" required>
     </label>
     <label class="field">
-      <span>ENCRYPTED_MESSAGE*</span>
-      <textarea id="fieldMessage" rows="4" placeholder="Contanos qué necesitás" required></textarea>
+      <span>$ paquete</span>
+      <select id="fieldPlan">
+        <option value="">No estoy seguro todavía</option>
+        <option value="Starter">Starter · desde $150</option>
+        <option value="Business">Business · desde $300</option>
+        <option value="Custom">Custom · a cotizar</option>
+        <option value="Mi proyecto (slot 03)">Quiero el slot 03 del portafolio</option>
+      </select>
     </label>
-    <button type="submit" class="btn btn--primary btn--block">EXECUTE_CONNECT</button>
+    <label class="field">
+      <span>$ mensaje*</span>
+      <textarea id="fieldMessage" rows="4" placeholder="Contanos a qué se dedica tu negocio y qué necesitás" required></textarea>
+    </label>
+    <p class="field__error" id="formError" role="alert" hidden>Completá tu nombre y tu mensaje para continuar.</p>
+    <button type="submit" class="btn btn--primary btn--block">./enviar_por_whatsapp</button>
   </form>
 </section>
 
+</main>
+
 <footer class="footer">
-  <span>snbr.dev // Acceso Root</span>
+  <span class="footer__brand"><span class="brand-mark brand-mark--sm"><img src="img/logo-white.png" alt="snbr.dev" width="626" height="498"><i class="brand-mark__cursor"></i></span><span>desarrollo web y software</span></span>
   <span>© 2026 snbr.dev</span>
-  <span class="footer__badge"><span class="dot dot--green"></span>CLOUDFLARE_SECURED</span>
+  <span class="footer__badge"><span class="dot dot--green"></span>sistema_operativo</span>
   <a href="terms-and-conditions.html">Términos y condiciones</a>
 </footer>
 
 <script src="script.js"></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"c541d14c4cc54518a84c3ea2ff11c56e","r":1,"spa":2}' crossorigin="anonymous"></script>
 </body>
 </html>
